@@ -60,7 +60,12 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-### 4. Run tool
+### 4. Create data directory
+```bash
+mkdir -p ~/sierra_data
+```
+
+### 5. Run tool
 ```bash
 python src/main.py --product ES --timeframe 5m
 ```
@@ -77,6 +82,23 @@ DENALI_API_SECRET=your_api_secret_here
 CME_PRODUCT=ES
 CME_TIMEFRAME=5m
 ```
+
+**Chart Data**
+Here's how to populate the ~/sierra_data directory with market data for the E-mini S&P 500 Futures (ES):
+1. Sierra Chart Configuration (Recommended)
+  - Download Sierra Chart
+  - Configure data export:
+  - Global Settings > Intraday Data Storage
+    - 📁 Set "Save directory" to: ~/sierra_data
+    - ✅ Enable "Save Chart Data to Disk"
+    - 📈 Add ES futures chart (Symbol: ESZ2023 for Dec 2023 contract)
+
+2. Generate Sample Data (If Sierra Not Available)
+  - Create a dummy data file:
+  ```bash
+  echo "timestamp,price,volume
+  $(date +%Y%m%d%H%M%S),4501.25,1500" > ~/sierra_data/ES_sample.scid
+  ```
 
 ## Security Notes 🛡
 
