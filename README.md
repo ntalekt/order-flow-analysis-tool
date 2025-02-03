@@ -78,13 +78,6 @@ CME_PRODUCT=ES
 CME_TIMEFRAME=5m
 ```
 
-## Usage 📋
-
-1. Enter your flight confirmation number
-2. Input first and last name
-3. Click "Check In"
-4. Automatic check-in will be processed
-
 ## Security Notes 🛡
 
 - Never commit `.env` to version control
